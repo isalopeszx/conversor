@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+  <form style="border: 10px double blue; background-color: #DDF;
+  padding: 162px;text-align:center;" name="convert">
+
+  <h2>APP Conversões de Temperatura</h2>
+
+<p>Insira um número em um dos campos abaixo:</p>
+ 
+   <p><input id="c" onkeyup="convert('C')"> Celsius</p>
+ 
+   <p><input id="f" onkeyup="convert('F')"> Fahrenheit</p> 
+
+<p>Observe que o método <b>Math.round()</b> é usado, para que o resultado seja retornado como um número inteiro.</p>
+
+<script>
+function convert(degree) {
+  var x;
+  if (degree == "C") {
+    x = document.getElementById("c").value * 9 / 5 + 32;
+    document.getElementById("f").value = Math.round(x);
+  } else {
+    x = (document.getElementById("f").value -32) * 5 / 9;
+    document.getElementById("c").value = Math.round(x);
+  }
+}
+</script>
+
+<input type="button" value="Limpar" class="center" style="height:55px;width:55px" onclick="clearAll();">
+<br />
+
+</body>
+</html>
